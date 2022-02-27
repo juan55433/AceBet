@@ -1,0 +1,35 @@
+.buttonb{
+    margin-top: 20%;
+    text-align:center;
+}  
+      #btnb{
+        border: 2px solid black;
+        padding: 30px 73px;
+        color: black;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        font-size: 24px;
+        font-family: sans-serif;
+        transition: all .5s;
+        text-decoration:none;
+        }
+        #btnb:before{
+          width: 100%;
+          height: 100%;
+          content: '';
+          margin: auto;
+          position: absolute;
+          top:  -100%;
+          left: -100%;
+          background: #212121;
+          transition: all .5s;
+          z-index: -1;
+          
+        }
+    #btnb:hover{
+      color: #43A9AF;
+    }
+    #btnb:hover:before{      
+        top: 0;
+    }

@@ -1,1 +1,29 @@
-asd
+$color: #43A9AF;
+$color-frame: #ffffff;
+@use "btn1";
+@use "btn2";
+body{
+    background: $color;
+}
+.frame{
+    width:500px;
+    height:700px;
+    background:white;
+    overflow:auto;
+    margin: 0 auto;
+} 
+.titulo{
+    font-style:italic;
+    text-align:center;
+    margin-top: 20%;
+    font-family:'Lucida Grande';
+    font-size:30px;
+    color:#43A9AF;
+}
+.subtitulo{
+  text-align: center;
+  margin-top: 15%;
+  font-size: 19px;
+  font-family: "Lucida Grande";
+}
+

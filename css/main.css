@@ -1,0 +1,107 @@
+#btn {
+  border: 2px solid black;
+  padding: 30px 60px;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 24px;
+  font-family: sans-serif;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+.button {
+  margin-top: 30%;
+  text-align: center;
+}
+
+#btn:before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  background: #212121;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+#btn:hover {
+  color: #43A9AF;
+}
+
+#btn:hover:before {
+  top: 0;
+}
+
+.buttonb {
+  margin-top: 20%;
+  text-align: center;
+}
+
+#btnb {
+  border: 2px solid black;
+  padding: 30px 73px;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 24px;
+  font-family: sans-serif;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+#btnb:before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  background: #212121;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+#btnb:hover {
+  color: #43A9AF;
+}
+
+#btnb:hover:before {
+  top: 0;
+}
+
+body {
+  background: #43A9AF;
+}
+
+.frame {
+  width: 500px;
+  height: 700px;
+  background: white;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.titulo {
+  font-style: italic;
+  text-align: center;
+  margin-top: 20%;
+  font-family: "Lucida Grande";
+  font-size: 30px;
+  color: #43A9AF;
+}
+
+.subtitulo {
+  text-align: center;
+  margin-top: 15%;
+  font-size: 19px;
+  font-family: "Lucida Grande";
+}
+
+/*# sourceMappingURL=main.css.map */
