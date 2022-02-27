@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+  }
+  body {
+    background-color: #f2f4ff;
+  }
+  .container {
+    width: 400px;
+    height: 490px;
+    background-color: #fff;
+    margin: 90px auto;
+    border-radius: 1px;
+    padding: 40px 50px;
+    box-shadow: #43A9AF 0px 8px 24px;
+  }
+  /* top-header */
+  .top-header h3 {
+    text-align: center;
+    color: #43A9AF;
+  }
+  .top-header p {
+    color: #cecfd3;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 5px;
+  }
+  /* top-header */
+  /* form */
+  .user input,
+  .pass input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 40px;
+  }
+  ::placeholder {
+    color: #9ca5b4;
+    font-size: 12px;
+  }
+  .user i,
+  .pass i {
+    position: relative;
+    top: 31px;
+    right: -10px;
+    color: #43A9AF;
+  }
+  /* form */
+  /* button */
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .btn button {
+    width: 100%;
+    border: none;
+    height: 35px;
+    background-color: #43A9AF;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  /* button */
+  p.last {
+    text-align: center;
+    position: relative;
+    bottom: 120px;
+    font-size: 12px;
+  }
