@@ -1,0 +1,41 @@
+.titulo-main{
+    font-style:italic;
+    text-align:center;
+    margin-top: 0%;
+    font-family:'Lucida Grande';
+    font-size:30px;
+    color:#43A9AF;
+}
+.circle {
+    background: #43A9AF;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align:left;
+    font-size: 18px;
+}
+.padre{
+    display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+.padreb{
+    display: flex;
+    flex-wrap: wrap;
+}
+.texto{
+    margin-top: 120%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.apuesta{
+    margin-top: 35%;
+}
+.fontapuesta{
+    font-size:30px;
+}
+.rectangle {
+    height: 20px;
+    width: 30px;
+    background-color: #43A9AF;
+}

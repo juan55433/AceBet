@@ -3,6 +3,7 @@ $color-frame: #ffffff;
 @use "btn1";
 @use "btn2";
 @use "login";
+@use "main";
 body{
     background: $color;
 }
