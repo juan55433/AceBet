@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title></title>
     <link href="../css/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/main.js"></script>
 </head>
 
 <body>
@@ -25,27 +26,27 @@
                 <form action="">
                     <div class="user">
                         <i class="bx bxs-user-circle"></i>
-                        <input type="text" placeholder="Nombre" />
+                        <input type="text" id ="nombre" placeholder="Nombre" />
                     </div>
                     <div class="user">
                         <i class="bx bxs-user-circle"></i>
-                        <input type="text" placeholder="Número de teléfono" />
+                        <input type="text" id ="nrotelefono" placeholder="Número de teléfono" />
                     </div>
                     <div class="user">
                         <i class="bx bxs-user-circle"></i>
-                        <input type="text" placeholder="Email" />
+                        <input type="text" id="email" placeholder="Email" />
                     </div>
                     <div class="user">
                         <i class="bx bxs-user-circle"></i>
-                        <input type="text" placeholder="Cédula" />
+                        <input type="text" id = "cedula" placeholder="Cédula" />
                     </div>
                     <div class="pass">
                         <i class="bx bxs-lock-alt"></i>
-                        <input type="password" placeholder="Contraseña" />
+                        <input type="password" id="password" placeholder="Contraseña" />
                     </div>
                 </form>
                 <div class="btn">
-                    <button onclick="">Registrarse</button>
+                    <button onclick="registrar();" value="registrar">Registrarse</button>
                 </div>
             </div>
             <p class="last">¿Olvidaste tu contraseña? <a href="#">Restablecer la contraseña</a></p>
