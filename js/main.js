@@ -11,6 +11,17 @@ function cargarDatos(){
         id = datos.length;
     }
 }
+function restore(){
+    cargarDatos();
+    var cedulas = document.getElementById('cedula');
+    var emails = document.getElementById('email');
+    if(getEmail(cedulas.value, emails.value)){
+        alert("Los pasos para restablecer la contraseña fueron enviados al correo "+ emails.value);
+    }
+    else{
+        alert("Credenciales incorrectas");
+    }
+}
 function logear(){
     cargarDatos();
     var cedulas = document.getElementById('cedula');
@@ -67,6 +78,18 @@ function getPassword(cedula, password){
         if(datos[i]){
             if(datos[i].cedula === cedula){
                 if(datos[i].password === password) {
+                    return datos[i];
+                }
+            }
+        }
+    }
+    return undefined;
+}
+function getEmail(cedula, email){
+    for(let i in datos){
+        if(datos[i]){
+            if(datos[i].cedula === cedula){
+                if(datos[i].email === email) {
                     return datos[i];
                 }
             }
