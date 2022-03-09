@@ -11,6 +11,17 @@ function cargarDatos(){
         id = datos.length;
     }
 }
+function logear(){
+    cargarDatos();
+    var cedulas = document.getElementById('cedula');
+    var passwords = document.getElementById('password');
+    if(getPassword(cedulas.value, passwords.value)){
+        location.href='main.html';
+    }
+    else{
+        alert("Credenciales incorrectas");
+    }
+}
 function registrar(){
     cargarDatos();
     var nombres = document.getElementById('nombre');    
@@ -41,10 +52,27 @@ function registrar(){
 function buscarcedula(cedula){
     for(let i in datos){
         if(datos[i]){
-            if(datos[i].cedula === cedula) return datos[i];
+            if(datos[i].cedula === cedula) {
+                return datos[i];
+            }
+            else{
+                return undefined;
+            }
         }
     }
     return undefined    ;
+}
+function getPassword(cedula, password){
+    for(let i in datos){
+        if(datos[i]){
+            if(datos[i].cedula === cedula){
+                if(datos[i].password === password) {
+                    return datos[i];
+                }
+            }
+        }
+    }
+    return undefined;
 }
 function guardar(){
     if(datos.length>0)
