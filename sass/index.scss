@@ -4,6 +4,7 @@ $color-frame: #ffffff;
 @use "btn2";
 @use "login";
 @use "main";
+@use "submenu";
 body{
     background: $color;
 }

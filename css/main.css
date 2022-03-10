@@ -220,6 +220,60 @@ p.last {
   background-color: #43A9AF;
 }
 
+.navigation {
+  width: 50px;
+  margin-left: auto;
+}
+
+.navigation-aps {
+  width: 90px;
+  margin-left: auto;
+}
+
+.centerflex {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.mainmenu, .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mainmenu a {
+  display: block;
+  background-color: white;
+  text-decoration: none;
+  padding: 10px;
+  color: #fff;
+}
+
+.mainmenu a:hover {
+  background-color: #ffffff;
+}
+
+.mainmenu li:hover .submenu {
+  max-height: 150px;
+}
+
+.submenu a {
+  background-color: #43A9AF;
+}
+
+.submenu a:hover {
+  background-color: #43A9AF;
+}
+
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 1s ease-out;
+  position: absolute;
+}
+
 body {
   background: #43A9AF;
 }
