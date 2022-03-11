@@ -18,34 +18,35 @@
         </head>
 
         <body>
-        <div class="frame">
+        <div class="frame" >
             
-            <a href ="../index.html"><img src ="../img/flechaizq.png" width="30" height="30"> </a>
+            <a href ="main.html"><img src ="../img/flechaizq.png" width="30" height="30"> </a>
                 <div class="top-header">
                     <h3>AceBet</h3>
                     <p>Datos de la cuenta</p>
                 </div>
-                <form action="">
+                <br>
+                <form action="" onload="getDatos();">
                     <div class="user">
-                        <i class="bx bxs-user-circle"></i>
-                        <output id ="outnombre" placeholder="Nombre" />
+                        <p>Nombre: <output id ="outnombre" placeholder="Nombre" /> </p>
                     </div>
+                    <br>
                     <div class="user">
-                        <i class="bx bxs-user-circle"></i>
-                        <output id ="outnrotelefono" placeholder="Número de teléfono" />
+                        <p>Número de telefono: <output id ="outnrotelefono" placeholder="Número de teléfono" /><p>
                     </div>
+                    <br>
                     <div class="user">
-                        <i class="bx bxs-user-circle"></i>
-                        <output id="outmontoapostado" placeholder="Email" />
+                        <p>Monto total apostado: <output id="outmontoapostado" placeholder="Email" /></p>
                     </div>
+                    <br>
                     <div class="user">
-                        <i class="bx bxs-user-circle"></i>
-                        <output id = "outmontoganado" placeholder="Cédula" />
+                        <p>Monto total ganado: <output id = "outmontoganado" placeholder="Cédula" /></p>
                     </div>
+                    <br>
                     <div class="user">
-                        <i class="bx bxs-user-circle">Historial de apuesta:</i>
-                        <output id = "historial_de_apuesta" placeholder="Cédula" />
+                        <p>Historial de apuestas: <output id = "historial_de_apuesta" placeholder="Cédula" /></p>
                     </div>
+                    <br>
                 </form>
             </div>
         </body>
