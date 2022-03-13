@@ -2,7 +2,8 @@ var datos = [];
 let id = 0;
 let cedulalogeada = '';
 var estado = [];
-
+let statuslogeo = 0;
+let statuscedula = '';
 window.onload = ()=>{
     cargarDatos();
 };
@@ -45,17 +46,15 @@ function getDatos(){
     }
     return 0;
 }
+function offestado(){
+    statuslogeo = 0;
+    statuscedula = '';
+    return 1;
+}
 function cambiaEstado(cedula){
-    let estado = 1;
-    cargarDatos();
-    for(let i in datos){
-        if(datos[i]){
-            if(datos[i].cedula === cedula){
-                datos[i].estado = estado;
-            }
-        }
-    }
-    return undefined;
+    statuslogeo = 1;
+    statuscedula = cedula;
+    return cedula;
 }
 function logear(){
     cargarDatos();
@@ -94,8 +93,9 @@ function registrar(){
             let montototalapostado = 0;
             let montototalganado = 0;
             let historial = [Apuesta];
+            let montoactual = 0;
             let estado = 0;
-            datos[id] = {nombre,telefono,email,cedula,password,id,montototalapostado,montototalganado,historial, estado};
+            datos[id] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
             guardar();
             logear();
         }
@@ -150,4 +150,33 @@ function guardar(){
   {
     localStorage.setItem("datos",JSON.stringify(datos));
   }
+}
+function addcash(){
+    var cedula = document.getElementById("ccrecarga");
+
+    var monto = document.getElementById("cantidad");
+    let cc = cedula.value;
+    let montoa = monto.value;
+    for(let i in datos){
+        if(datos[i]){
+            if(datos[i].cedula === cc){
+                datos[i].montoactual.value += montoa;
+                nombre = datos[i].nombre;
+                telefono = datos[i].telefono;
+                email = datos[i].email;
+                cedula = datos[i].cedula;
+                password = datos[i].password;
+                id = datos[i].id;
+                montototalapostado = datos[i].montototalapostado;
+                montoactual = montoa +datos[i].montoactual;
+                montototalganado = datos[i].montototalganado;
+                historial = datos[i].historial;
+                estado = datos[i].estado;
+                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                guardar();
+                return 1;
+            }
+        }
+    }
+    return alert("no se encontró la cedula");
 }
