@@ -46,10 +46,12 @@ function getDatos(){
     return 0;
 }
 function cambiaEstado(cedula){
+    let estado = 1;
+    cargarDatos();
     for(let i in datos){
         if(datos[i]){
             if(datos[i].cedula === cedula){
-                datos[i].estado = 1;
+                datos[i].estado = estado;
             }
         }
     }
