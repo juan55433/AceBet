@@ -1,9 +1,5 @@
 var datos = [];
 let id = 0;
-let cedulalogeada = '';
-var estado = [];
-let statuslogeo = 0;
-let statuscedula = '';
 window.onload = ()=>{
     cargarDatos();
 };
@@ -25,43 +21,35 @@ function restore(){
         alert("Credenciales incorrectas");
     }
 }
-function getDatos(){
-    cargarDatos();
+function offestado(){
     for(let i in datos){
         if(datos[i]){
             if(datos[i].estado === 1){
-                var nombreUser = document.getElementById('outnombre');
-                nombreUser.value = datos[i].nombre;
-                var telUser = document.getElementById('outnrotelefono');
-                telUser.value = datos[i].telefono;
-                var montoapostadouser = document.getElementById('outmontoapostado');
-                montoapostadouser.value = datos[i].montototalapostado;
-                var montoganadouser = document.getElementById('outmontoganado');
-                montoganadouser.value = datos[i].montototalganado;
-                var historialuser = document.getElementById('historial_de_apuesta');
-                historialuser.value = datos[i].historial
+                nombre = datos[i].nombre;
+                telefono = datos[i].telefono;
+                email = datos[i].email;
+                cedula = datos[i].cedula;
+                password = datos[i].password;
+                id = datos[i].id;
+                montototalapostado = datos[i].montototalapostado;
+                montoactual = datos[i].montoactual;
+                montototalganado = datos[i].montototalganado;
+                historial = datos[i].historial;
+                estado = 0;
+                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                guardar();
                 return 1;
             }
         }
     }
     return 0;
 }
-function offestado(){
-    statuslogeo = 0;
-    statuscedula = '';
-    return 1;
-}
-function cambiaEstado(cedula){
-    statuslogeo = 1;
-    statuscedula = cedula;
-    return cedula;
-}
 function logear(){
     cargarDatos();
     var cedulas = document.getElementById('cedula');
     var passwords = document.getElementById('password');
     if(getPassword(cedulas.value, passwords.value)){
-        cambiaEstado(cedulas.value);
+        statuslogeo(1,cedulas.value);
         location.href='main.html';
     }
     else{
@@ -172,6 +160,31 @@ function addcash(){
                 montototalganado = datos[i].montototalganado;
                 historial = datos[i].historial;
                 estado = datos[i].estado;
+                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                guardar();
+                return 1;
+            }
+        }
+    }
+    return alert("no se encontró la cedula");
+}
+function statuslogeo(status, cedula){
+    var cedula = document.getElementById("cedula");
+    let cc = cedula.value;
+    for(let i in datos){
+        if(datos[i]){
+            if(datos[i].cedula === cc){  
+                nombre = datos[i].nombre;
+                telefono = datos[i].telefono;
+                email = datos[i].email;
+                cedula = datos[i].cedula;
+                password = datos[i].password;
+                id = datos[i].id;
+                montototalapostado = datos[i].montototalapostado;
+                montoactual = datos[i].montoactual;
+                montototalganado = datos[i].montototalganado;
+                historial = datos[i].historial;
+                estado = status;
                 datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
                 guardar();
                 return 1;
