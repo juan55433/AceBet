@@ -191,12 +191,14 @@ function reply_click(clicked_id)
   }
   function unblock_all(){
     document.getElementById("frame").style="pointer-events:all";
+    document.getElementById("btnace").style="pointer-events:none"
 
   }
   function block_all(){
     document.getElementById("frame").style="pointer-events:none";
     document.getElementById("fath").style="pointer-events:all";
     document.getElementById("mm").style="pointer-events:all";
+    document.getElementById("btnace").style="pointer-events:all"
   }
   function show_button(){
     document.getElementById("btn").style="pointer-events:all";
