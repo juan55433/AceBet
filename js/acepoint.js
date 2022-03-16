@@ -307,7 +307,7 @@ function asignar_dinero_retirar(){
                 ide = datos[i].id;
                 montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
                 montoactual = Number(datos[i].montoactual)+Number(cantidad);
-                montototalganado = Number(datos[i].montototalganado);
+                montototalganado = Number(datos[i].montototalganado) + cantidad;
                 historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
                     " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue ganada. -";
                 estado = datos[i].estado;
@@ -377,7 +377,7 @@ function asignar_dinero_ganado(cantidad){
                 ide = datos[i].id;
                 montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
                 montoactual = Number(datos[i].montoactual)+Number(cantidad);
-                montototalganado = Number(datos[i].montototalganado);
+                montototalganado = Number(datos[i].montototalganado) + cantidad;
                 historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
                     " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue ganada. -";
                 estado = datos[i].estado;
