@@ -1,11 +1,43 @@
-for(let a = 0; a < 200; a++)
-{
-    i = Math.floor(Math.random() * 5);
-    j = Math.floor(Math.random() * 5);
-    k = Math.floor(Math.random() * 5);
-    m = Math.floor(Math.random() * 5);
-    if(i === j || i === k || i === m || j === k || j === m || k === m); 
-    else break;
+var datos = [];
+let idd = 0;
+window.onload = ()=>{
+    cargarDatos();
+    hide_c20();
+    hide_c280();
+    hide_c721();
+    hide_button();
+    cargar();
+};
+function recargar(){
+    cargarDatos();
+    hide_c20();
+    hide_c280();
+    hide_c721();
+    hide_button();
+    unblock_all();
+    var circulofaila = [];
+    circulofaila = getc191(circulofaila);
+    document.getElementById(circulofaila[i]).style="background:#43A9AF";
+    cargar();
+    document.getElementById("qtn").style="pointer-events:all;";
+}
+function cargarDatos(){
+    let temp = localStorage.getItem("datos");
+    if(temp){
+        datos = JSON.parse(temp);
+        idd = datos.length;
+    }
+}
+function cargar(){
+    for(let a = 0; a < 200; a++)
+    {
+        i = Math.floor(Math.random() * 5);
+        j = Math.floor(Math.random() * 5);
+        k = Math.floor(Math.random() * 5);
+        m = Math.floor(Math.random() * 5);
+        if(i === j || i === k || i === m || j === k || j === m || k === m); 
+        else break;
+    }
 }
 function getc191(){
     
@@ -64,6 +96,71 @@ function getc20(){
     let circulofailed= [a,b,c,d,e];
     return circulofailed;
 }
+function hide_c191(){
+    var circulofailb = [];
+    circulofailb = getc191(circulofailb);
+    for(let v = 0; v < 5; v++){
+        document.getElementById(circulofailb[v]).style="display:none;";
+    }
+}
+function hide_c280(){
+    var circulofailb = [];
+    circulofailb = getc280(circulofailb);
+    for(let v = 0; v < 5; v++){
+        document.getElementById(circulofailb[v]).style="display:none;";
+    }
+}
+function hide_c721(){
+    var circulofailb = [];
+    circulofailb = getc721(circulofailb);
+    for(let v = 0; v < 5; v++){
+        document.getElementById(circulofailb[v]).style="display:none;";
+    }
+}
+function hide_c20(){
+    var circulofailb = [];
+    circulofailb = getc20(circulofailb);
+    for(let v = 0; v < 5; v++){
+        document.getElementById(circulofailb[v]).style="display:none;";
+    }
+}
+function showc280(){
+    var circulofailb = [];
+    circulofailb = getc280(circulofailb);
+    for(let v = 0; v < 5; v++){
+        document.getElementById(circulofailb[v]).style="display:flex;";
+    }
+}
+function showc721(){
+    var circulofailc = [];
+    circulofailc = getc721(circulofailc);
+    for(let v = 0; v < 5; v++){
+        document.getElementById(circulofailc[v]).style="display:flex;";
+    }
+}
+function showc20(){
+    var circulofailc = [];
+    circulofailc = getc20(circulofailc);
+    for(let v = 0; v < 5; v++){
+        document.getElementById(circulofailc[v]).style="display:flex;";
+    }
+}
+function showall(){
+    var circulofaila = [];
+    var circulofailb = [];
+    var circulofailc = [];
+    var circulofaild = [];
+    circulofaila = getc191(circulofaila);
+    circulofailb = getc280(circulofailb);
+    circulofailc = getc721(circulofailc);
+    circulofaild = getc20(circulofaild);
+    for(let v = 0; v < 5; v++){
+        document.getElementById(circulofaila[v]).style="display:flex;"; 
+        document.getElementById(circulofailb[v]).style="display:flex;";
+        document.getElementById(circulofailc[v]).style="display:flex;";
+        document.getElementById(circulofaild[v]).style="display:flex;";
+    }
+}
 function show_answer(){
     var circulofaila = [];
     var circulofailb = [];
@@ -88,47 +185,214 @@ function reply_click(clicked_id)
   {
       text = clicked_id;
   }
+  function hide_button(){
+    document.getElementById("btn").style="pointer-events:none;";
+
+  }
+  function unblock_all(){
+    document.getElementById("frame").style="pointer-events:all";
+
+  }
+  function block_all(){
+    document.getElementById("frame").style="pointer-events:none";
+    document.getElementById("fath").style="pointer-events:all";
+    document.getElementById("mm").style="pointer-events:all";
+  }
+  function show_button(){
+    document.getElementById("btn").style="pointer-events:all";
+  }
 function getPoint191(){
-    var circulofailed = [];
-    circulofailed = getc191(circulofailed);
-    if(text === circulofailed[i]) { 
-        alert("perdió");
-        show_answer();
+    var qtn = document.getElementById("qtn");
+    let cantidad = qtn.value;
+    if(qtn.value){
+        document.getElementById("qtn").style="pointer-events:none;";
+        var stock = 1.9;
+        var circulofailed = [];
+        circulofailed = getc191(circulofailed);
+        if(text === circulofailed[i]) { 
+            alert("perdió");
+            showall();
+            show_answer();
+            asignar_dinero_perdido(cantidad);
+        }
+        else{ 
+            alert("continue");
+            showc280();
+            hide_c191();
+            show_button();
+        }
     }
-    else{ 
-        alert("continue");
+    else{
+        alert("DIGITE UNA CANTIDAD!!");
     }
 }
 function getPoint280(){
+    var qtn = document.getElementById("qtn");
+    let cantidad = qtn.value;
+    var stock = 2.8;
     var circulofailed = [];
     circulofailed = getc280(circulofailed);
     if(text === circulofailed[i] || text === circulofailed[j]) {
         alert("perdió");
+        showall();
         show_answer();
+        asignar_dinero_perdido(cantidad);
     }
     else{ 
             alert("continue");
+            showc721();
+            hide_c280();
     }
 }
 function getPoint721(){
+    var qtn = document.getElementById("qtn");
+    let cantidad = qtn.value;
     var circulofailed = [];
     circulofailed = getc721(circulofailed);
     if(text === circulofailed[i] || text === circulofailed[j] || text === circulofailed[k]) {
         alert("perdió");
+        showall();
         show_answer();
+        asignar_dinero_perdido(cantidad);
     }
     else{ 
             alert("continue");
+            showc20();
+            hide_c721();
     }
 }
 function getPoint20(){
+    var qtn = document.getElementById("qtn");
+    let cantidad = qtn.value;
     var circulofailed = [];
     circulofailed = getc20(circulofailed);
     if(text === circulofailed[m] || text === circulofailed[i] || text === circulofailed[j] || text === circulofailed[k]  ) {
         alert("perdió");
+        showall();
         show_answer();
+        asignar_dinero_perdido(cantidad);
     }
     else{ 
         alert("Ganó");
+        asignar_dinero_ganado(cantidad);
+    }
+}
+function asignar_dinero_retirar(){
+    var qtn = document.getElementById("qtn");
+    let cantidad = qtn.value;
+    var circulos = [];
+    circulos = getc191(circulos);
+    var displayvalue = document.getElementById('circulo284').style.display;
+    if(displayvalue === "none"){
+        cantidad  = Number(cantidad) * Number(1.9);
+    }
+    else{
+        cantidad = Number(cantidad) * Number(2.8);
+    }
+    var displayvalue = document.getElementById('circulo20').style.display;
+    if(displayvalue ==="flex"){
+        cantidad = Number(cantidad) * Number(7.2);
+    }
+    for(let i in datos){
+        if(datos[i]){
+            if(datos[i].estado === 1 && datos[i].montoactual >= cantidad){  
+                if(datos[i].montoactual >= cantidad){
+                nombre = datos[i].nombre;
+                telefono = datos[i].telefono;
+                email = datos[i].email;
+                cedula = datos[i].cedula;
+                password = datos[i].password;
+                id = datos[i].id;
+                montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
+                montoactual = Number(datos[i].montoactual)+Number(cantidad);
+                montototalganado = Number(datos[i].montototalganado);
+                historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
+                    " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue ganada. -";
+                estado = datos[i].estado;
+                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                guardar();
+                alert("Ganó " + cantidad + " saldo actual: " + datos[i].montoactual);
+                block_all();
+                showall();
+                show_answer();
+                hide_button();
+                return 1;
+                }
+                else{
+                    alert("No tiene suficiente saldo");
+                    return 0;
+                }
+            }
+        }
+    }
+    return console.log(displayvalue);
+}
+function asignar_dinero_perdido(cantidad){
+    for(let i in datos){
+        if(datos[i]){
+            if(datos[i].estado === 1 && datos[i].montoactual >= cantidad){  
+                if(datos[i].montoactual >= cantidad){
+                nombre = datos[i].nombre;
+                telefono = datos[i].telefono;
+                email = datos[i].email;
+                cedula = datos[i].cedula;
+                password = datos[i].password;
+                id = datos[i].id;
+                montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
+                montoactual = Number(datos[i].montoactual)-Number(cantidad);
+                montototalganado = Number(datos[i].montototalganado);
+                historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
+                    " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue perdida. -";
+                estado = datos[i].estado;
+                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                guardar();
+                alert("Perdió " + cantidad + " saldo actual: " + datos[i].montoactual);
+                block_all();
+                showall();
+                show_answer();
+                hide_button();
+                return 1;
+                }
+                else{
+                    alert("No tiene suficiente saldo");
+                    return 0;
+                }
+            }
+        }
+    }
+}
+function asignar_dinero_ganado(cantidad){
+    cantidad = cantidad * 20;
+    for(let i in datos){
+        if(datos[i]){
+            if(datos[i].estado === 1 && datos[i].montoactual >= cantidad){  
+                if(datos[i].montoactual >= cantidad){
+                nombre = datos[i].nombre;
+                telefono = datos[i].telefono;
+                email = datos[i].email;
+                cedula = datos[i].cedula;
+                password = datos[i].password;
+                id = datos[i].id;
+                montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
+                montoactual = Number(datos[i].montoactual)+Number(cantidad);
+                montototalganado = Number(datos[i].montototalganado);
+                historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
+                    " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue ganada. -";
+                estado = datos[i].estado;
+                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                guardar();
+                alert("Ganó " + cantidad + " saldo actual: " + datos[i].montoactual);
+                block_all();
+                showall();
+                show_answer();
+                hide_button();
+                return 1;
+                }
+                else{
+                    alert("No tiene suficiente saldo");
+                    return 0;
+                }
+            }
+        }
     }
 }

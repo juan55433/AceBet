@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="frame">
+    <div id = "frame" class="frame">
         
         <div class="centerflex" >
             <a href ="main.html"><img src ="../img/flechaizq.png" width="30" height="30"> </a>
@@ -17,9 +17,9 @@
             </div>
         <nav class ="navigation-aps">
             
-            <ul style="" class ="mainmenu">
+            <ul id = "mm" class ="mainmenu">
                 <li>
-                    <a style=""><img src ="../img/icon-line.png" width="25" height="25"> </a>
+                    <a><img src ="../img/icon-line.png" width="25" height="25"> </a>
                     <ul class="submenu">
                         <li><a href="cash.html">Agregar Dinero</a></li>
                         <li><a href="detail.html">Ver Cuenta</a></li>
@@ -29,7 +29,7 @@
             </ul>    
         </nav>
         </div>
-        <div class="padre">
+        <div id = "fath" class="padre">
             <div class="circle" onclick="location.href='soccer.html'">
                 <p class="texto">Fútbol</p>
             </div>
@@ -49,7 +49,7 @@
         <div class="fontapuesta" style="text-align:center;">AcePoint(minijuego)</div>
         <div class="padre">
             <div style="margin-top:2%; margin-left:4%; text-align: center;" class="rectangle">
-                <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">20.0</p>
+                <p id ="ap" style="cursor:pointer;">20.0</p>
             </div>
             <div class="circle" id ="circulo20" onclick="reply_click(this.id);getPoint20();">
             </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="padre">
             <div style="margin-top:2%; margin-left:4%; text-align:center;"class="rectangle";>
-                <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">7.2</p>
+                <p id ="ap" style="cursor:pointer;">7.2</p>
             </div> 
             <div class="circle" id ="circulo721" onclick="reply_click(this.id);getPoint721();">
             </div>
@@ -79,7 +79,7 @@
         </div>
         <div class="padre">
             <div style="margin-top:2%; margin-left:4%; text-align:center;" class ="rectangle">
-                <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">2.8</p>
+                <p id ="ap2.8" style="cursor:pointer;">2.8</p>
             </div>
             <div class="circle" id ="circulo280" onclick="reply_click(this.id);getPoint280();">
             </div>
@@ -94,7 +94,7 @@
         </div>
         <div class="padre">
             <div style="margin-top:2%; margin-left:4% ;text-align:center;" class ="rectangle">
-                <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">1.9</p>
+                <p id ="ap1.9" style="cursor:pointer;">1.9</p>
             </div>
             <div class="circle" id ="circulo191" onclick="reply_click(this.id); getPoint191();">
             </div>
@@ -115,7 +115,7 @@
             </div>
             </div>
         <div class = "buttonace">
-            <a id="btn" onclick="alert('Ganó un total de ');">Retirarse</a>
+            <a id ="btn" onclick="asignar_dinero_retirar()">Retirarse</a>
         </div>
     </div>
         
