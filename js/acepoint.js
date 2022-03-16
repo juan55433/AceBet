@@ -1,5 +1,5 @@
 var datos = [];
-let idd = 0;
+idd = 0;
 window.onload = ()=>{
     cargarDatos();
     hide_c20();

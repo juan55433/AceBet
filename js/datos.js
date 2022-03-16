@@ -1,5 +1,5 @@
 var datos = [];
-let idc = 0;
+idc = 0;
 window.onload = ()=>{
     cargarDatos();
     getDatos();
