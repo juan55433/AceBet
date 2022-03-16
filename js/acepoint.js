@@ -64,7 +64,26 @@ function getc20(){
     let circulofailed= [a,b,c,d,e];
     return circulofailed;
 }
-
+function show_answer(){
+    var circulofaila = [];
+    var circulofailb = [];
+    var circulofailc = [];
+    var circulofaild = [];
+    circulofaila = getc191(circulofaila);
+    circulofailb = getc280(circulofailb);
+    circulofailc = getc721(circulofailc);
+    circulofaild = getc20(circulofaild);
+    document.getElementById(circulofaila[i]).style="background:red";
+    document.getElementById(circulofailb[i]).style="background:red";
+    document.getElementById(circulofailb[j]).style="background:red";
+    document.getElementById(circulofailc[i]).style="background:red";
+    document.getElementById(circulofailc[j]).style="background:red";
+    document.getElementById(circulofailc[k]).style="background:red";
+    document.getElementById(circulofaild[i]).style="background:red";
+    document.getElementById(circulofaild[j]).style="background:red";
+    document.getElementById(circulofaild[k]).style="background:red";
+    document.getElementById(circulofaild[m]).style="background:red";
+}
 function reply_click(clicked_id)
   {
       text = clicked_id;
@@ -74,9 +93,10 @@ function getPoint191(){
     circulofailed = getc191(circulofailed);
     if(text === circulofailed[i]) { 
         alert("perdió");
+        show_answer();
     }
     else{ 
-            alert("continue");
+        alert("continue");
     }
 }
 function getPoint280(){
@@ -84,6 +104,7 @@ function getPoint280(){
     circulofailed = getc280(circulofailed);
     if(text === circulofailed[i] || text === circulofailed[j]) {
         alert("perdió");
+        show_answer();
     }
     else{ 
             alert("continue");
@@ -94,6 +115,7 @@ function getPoint721(){
     circulofailed = getc721(circulofailed);
     if(text === circulofailed[i] || text === circulofailed[j] || text === circulofailed[k]) {
         alert("perdió");
+        show_answer();
     }
     else{ 
             alert("continue");
@@ -102,7 +124,10 @@ function getPoint721(){
 function getPoint20(){
     var circulofailed = [];
     circulofailed = getc20(circulofailed);
-    if(text === circulofailed[m] || text === circulofailed[i] || text === circulofailed[j] || text === circulofailed[k]  ) {alert("perdió");}
+    if(text === circulofailed[m] || text === circulofailed[i] || text === circulofailed[j] || text === circulofailed[k]  ) {
+        alert("perdió");
+        show_answer();
+    }
     else{ 
         alert("Ganó");
     }
