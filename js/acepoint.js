@@ -302,14 +302,14 @@ function asignar_dinero_retirar(){
                 email = datos[i].email;
                 cedula = datos[i].cedula;
                 password = datos[i].password;
-                id = datos[i].id;
+                ide = datos[i].id;
                 montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
                 montoactual = Number(datos[i].montoactual)+Number(cantidad);
                 montototalganado = Number(datos[i].montototalganado);
                 historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
                     " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue ganada. -";
                 estado = datos[i].estado;
-                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                datos[i] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
                 guardar();
                 alert("Ganó " + cantidad + " saldo actual: " + datos[i].montoactual);
                 block_all();
@@ -337,14 +337,14 @@ function asignar_dinero_perdido(cantidad){
                 email = datos[i].email;
                 cedula = datos[i].cedula;
                 password = datos[i].password;
-                id = datos[i].id;
+                ide = datos[i].id;
                 montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
                 montoactual = Number(datos[i].montoactual)-Number(cantidad);
                 montototalganado = Number(datos[i].montototalganado);
                 historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
                     " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue perdida. -";
                 estado = datos[i].estado;
-                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                datos[i] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
                 guardar();
                 alert("Perdió " + cantidad + " saldo actual: " + datos[i].montoactual);
                 block_all();
@@ -372,14 +372,14 @@ function asignar_dinero_ganado(cantidad){
                 email = datos[i].email;
                 cedula = datos[i].cedula;
                 password = datos[i].password;
-                id = datos[i].id;
+                ide = datos[i].id;
                 montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
                 montoactual = Number(datos[i].montoactual)+Number(cantidad);
                 montototalganado = Number(datos[i].montototalganado);
                 historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
                     " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue ganada. -";
                 estado = datos[i].estado;
-                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                datos[i] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
                 guardar();
                 alert("Ganó " + cantidad + " saldo actual: " + datos[i].montoactual);
                 block_all();

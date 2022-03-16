@@ -1,5 +1,5 @@
 var datos = [];
-let id = 0;
+let idc = 0;
 window.onload = ()=>{
     cargarDatos();
     getDatos();
@@ -8,7 +8,7 @@ function cargarDatos(){
     let temp = localStorage.getItem("datos");
     if(temp){
         datos = JSON.parse(temp);
-        id = datos.length;
+        idc = datos.length;
     }
 }
 function getDatos(){

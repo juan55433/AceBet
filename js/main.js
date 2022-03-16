@@ -1,5 +1,5 @@
 var datos = [];
-let id = 0;
+let ide = 0;
 window.onload = ()=>{
     cargarDatos();
 };
@@ -7,7 +7,7 @@ function cargarDatos(){
     let temp = localStorage.getItem("datos");
     if(temp){
         datos = JSON.parse(temp);
-        id = datos.length;
+        ide = datos.length;
     }
 }
 function restore(){
@@ -30,13 +30,13 @@ function offestado(){
                 email = datos[i].email;
                 cedula = datos[i].cedula;
                 password = datos[i].password;
-                id = datos[i].id;
+                ide = datos[i].id;
                 montototalapostado = datos[i].montototalapostado;
                 montoactual = datos[i].montoactual;
                 montototalganado = datos[i].montototalganado;
                 historial = datos[i].historial;
                 estado = 0;
-                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                datos[i] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
                 guardar();
                 return 1;
             }
@@ -66,7 +66,7 @@ function registrar(){
     var cedulas = document.getElementById('cedula');
     var passwords = document.getElementById('password');
     if(nombres.value && nrotelefonos.value && emails.value && cedulas.value && passwords.value){
-        if(!buscarcedula(cedulas.value) || id==0){
+        if(!buscarcedula(cedulas.value) || ide==0){
             let nombre = nombres.value;
             let telefono = nrotelefonos.value;
             let email = emails.value;
@@ -77,7 +77,7 @@ function registrar(){
             let historial = [];
             let montoactual = 0;
             let estado = 0;
-            datos[id] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+            datos[ide] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
             guardar();
             logear();
         }
@@ -148,13 +148,13 @@ function addcash(){
                 email = datos[i].email;
                 cedula = datos[i].cedula;
                 password = datos[i].password;
-                id = datos[i].id;
+                ide = datos[i].id;
                 montototalapostado = datos[i].montototalapostado;
                 montoactual = montoa +datos[i].montoactual;
                 montototalganado = datos[i].montototalganado;
                 historial = datos[i].historial;
                 estado = datos[i].estado;
-                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                datos[i] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
                 guardar();
                 return 1;
             }
@@ -173,13 +173,13 @@ function statuslogeo(status, cedula){
                 email = datos[i].email;
                 cedula = datos[i].cedula;
                 password = datos[i].password;
-                id = datos[i].id;
+                ide = datos[i].id;
                 montototalapostado = datos[i].montototalapostado;
                 montoactual = datos[i].montoactual;
                 montototalganado = datos[i].montototalganado;
                 historial = datos[i].historial;
                 estado = status;
-                datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                datos[i] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
                 guardar();
                 return 1;
             }
@@ -205,14 +205,14 @@ function apuesta(clicked_id){
                             email = datos[i].email;
                             cedula = datos[i].cedula;
                             password = datos[i].password;
-                            id = datos[i].id;
+                            ide = datos[i].id;
                             montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
                             montoactual =  Number(datos[i].montoactual)+Number(cantidad);
                             montototalganado = Number(datos[i].montototalganado) + Number(cantidad);
                             historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
                             " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue ganada. -";
                             estado = datos[i].estado;
-                            datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                            datos[i] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
                             guardar();
                             alert("Ganó " + cantidad + " saldo actual: " + datos[i].montoactual);
                             return 1;
@@ -234,14 +234,14 @@ function apuesta(clicked_id){
                         email = datos[i].email;
                         cedula = datos[i].cedula;
                         password = datos[i].password;
-                        id = datos[i].id;
+                        ide = datos[i].id;
                         montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
                         montoactual = Number(datos[i].montoactual)-Number(cantidad);
                         montototalganado = Number(datos[i].montototalganado);
                         historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
                             " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue perdida. -";
                         estado = datos[i].estado;
-                        datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                        datos[i] = {nombre,telefono,email,cedula,password,id: ide,montototalapostado,montoactual,montototalganado,historial, estado};
                         guardar();
                         alert("Perdió " + cantidad + " saldo actual: " + datos[i].montoactual);
                         return 1;
