@@ -49,19 +49,13 @@ function logear(){
     var cedulas = document.getElementById('cedula');
     var passwords = document.getElementById('password');
     if(getPassword(cedulas.value, passwords.value)){
+        offestado();
         statuslogeo(1,cedulas.value);
         location.href='main.html';
     }
     else{
         alert("Credenciales incorrectas");
     }
-}
-function Apuesta(montoapostado, estado, stack){
-    this.id = id;
-    this.montoapostado = montoapostado;
-    estado = "PA";
-    montoganado = montoapostado * stack;
-    this.stack = stack;
 }
 
 function registrar(){
@@ -80,7 +74,7 @@ function registrar(){
             let password = passwords.value; 
             let montototalapostado = 0;
             let montototalganado = 0;
-            let historial = [Apuesta];
+            let historial = [];
             let montoactual = 0;
             let estado = 0;
             datos[id] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
@@ -192,4 +186,77 @@ function statuslogeo(status, cedula){
         }
     }
     return alert("no se encontró la cedula");
+}
+function apuesta(clicked_id){
+    cargarDatos();
+    let alt = Math.floor(Math.random() * 100);
+    var qtn = document.getElementById("qtn");
+    let cantidad = qtn.value;
+    var idapuesta = document.getElementById(clicked_id).textContent;
+    let valueapuesta = idapuesta * 10;
+    if(cantidad){
+        if(alt <= (100)- valueapuesta  ){
+            for(let i in datos){
+                if(datos[i]){
+                    if(datos[i].estado === 1 ){  
+                        if(datos[i].montoactual >= cantidad){
+                            nombre = datos[i].nombre;
+                            telefono = datos[i].telefono;
+                            email = datos[i].email;
+                            cedula = datos[i].cedula;
+                            password = datos[i].password;
+                            id = datos[i].id;
+                            montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
+                            montoactual =  Number(datos[i].montoactual)+Number(cantidad);
+                            montototalganado = Number(datos[i].montototalganado) + Number(cantidad);
+                            historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
+                            " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue ganada. -";
+                            estado = datos[i].estado;
+                            datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                            guardar();
+                            alert("Ganó " + cantidad + " saldo actual: " + datos[i].montoactual);
+                            return 1;
+                        }
+                        else{
+                            alert("No tiene suficiente saldo");
+                            return 0;
+                        }
+                    }
+                }
+            }
+        }else{
+            for(let i in datos){
+                if(datos[i]){
+                    if(datos[i].estado === 1 && datos[i].montoactual >= cantidad){  
+                        if(datos[i].montoactual >= cantidad){
+                        nombre = datos[i].nombre;
+                        telefono = datos[i].telefono;
+                        email = datos[i].email;
+                        cedula = datos[i].cedula;
+                        password = datos[i].password;
+                        id = datos[i].id;
+                        montototalapostado = Number(datos[i].montototalapostado) + Number(cantidad);
+                        montoactual = Number(datos[i].montoactual)-Number(cantidad);
+                        montototalganado = Number(datos[i].montototalganado);
+                        historial = datos[i].historial + "El día " + new Date().getDate() +" del mes "+ new Date().getMonth() +
+                            " del año "+ new Date().getFullYear() + " apostó " + cantidad + " y fue perdida. -";
+                        estado = datos[i].estado;
+                        datos[i] = {nombre,telefono,email,cedula,password,id,montototalapostado,montoactual,montototalganado,historial, estado};
+                        guardar();
+                        alert("Perdió " + cantidad + " saldo actual: " + datos[i].montoactual);
+                        return 1;
+                        }
+                        else{
+                            alert("No tiene suficiente saldo");
+                            return 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    else{
+        alert("DIGITE UNA CANTIDAD!");
+        return 0;
+    }
 }

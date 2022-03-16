@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title></title>
     <link href="../css/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/main.js"></script>
+
 </head>
 
 <body>
@@ -51,7 +53,7 @@
                     <p class="fontapuesta">McGregor</p>
                 </div>
                 <div class = "rectangle" style="margin-top:2%;margin-left: 5%; text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>4.2</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">4.2</p>
                 </div>
             </div>
             <div style="margin-left:8%;">
@@ -62,7 +64,7 @@
                     <p class="fontapuesta">Khabib</p>
                 </div>
                 <div class = "rectangle" style="margin-top:2%;margin-left: 19%; text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>1.9</p>
+                    <p id ="ap"  onclick = "apuesta(this.id);" style="cursor:pointer;">1.9</p>
                 </div>
             </div>
         </div>
@@ -72,7 +74,7 @@
                     <p class="fontapuesta">Ngannou</p>
                 </div>
                 <div class = "rectangle" style="margin-top:2%;margin-left: 5%; text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>4.2</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">4.2</p>
                 </div>
             </div>
             <div style="margin-left:8%;">
@@ -83,10 +85,17 @@
                     <p class="fontapuesta">Cyril</p>
                 </div>
                 <div class = "rectangle" style="margin-top:2%;margin-left: 19%; text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>1.9</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">1.9</p>
                 </div>
             </div>
         </div>
+        <br>
+        <div style="text-align:center;">
+            <div style ="display:inline-block;" class="user">
+                <i class="bx bxs-user-circle"></i>
+                <input type="text" id ="qtn" placeholder="Cantidad" />
+            </div>
+            </div>
     </div>
     <br>
 </body>

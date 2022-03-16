@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title></title>
     <link href="../css/main.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/main.js"></script>
+
 </head>
 
 <body>
@@ -52,13 +54,16 @@
                     <p class="fontapuesta">Vs</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 30%; text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>3.1 LOCAL</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">3.1</p>
+                    <p>LOCAL</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 10%;text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>1.5 EMPATE</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">1.5</p>
+                    <p>EMPATE</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 10%;text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>1.5 VISITANTE</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">1.5</p>
+                    <p>VISITANTE</p>
                 </div>
             </div>
             <div style="text-align:center; margin-right:70%;">
@@ -74,13 +79,16 @@
                     <p class="fontapuesta">Vs</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 30%; text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>2.1 LOCAL</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">2.1</p>
+                    <p>LOCAL</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 10%;text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>2.2 EMPATE</p>
+                    <p id ="ap"  onclick = "apuesta(this.id);" style="cursor:pointer;">2.2</p>
+                    <p>EMPATE</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 10%;text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>3.5 VISITANTE</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">3.5</p>
+                    <p>VISITANTE</p>
                 </div>
             </div>
             <div style="text-align:center; margin-right:70%;">
@@ -96,19 +104,30 @@
                     <p class="fontapuesta">Vs</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 30%; text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>1.7 LOCAL</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">1.7</p>
+                    <p>LOCAL</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 10%;text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>4.4 EMPATE</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">4.4</p>
+                    <p>EMPATE</p>
                 </div>
                 <div class = "rectangle" style="margin-left: 10%;text-align: center; font-size:20px;font-style:italic; font-family:Arial, Helvetica, sans-serif" >
-                    <p>1.5 VISITANTE</p>
+                    <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">1.5</p>
+                    <p>VISITANTE</p>
                 </div>
             </div>
             <div style="text-align:center; margin-right:70%;">
                 <p class="fontapuesta">Chelsea[V]</p>
             </div>
+            
         </div>
+        <br>
+        <div style="text-align:center;">
+            <div style ="display:inline-block;" class="user">
+                <i class="bx bxs-user-circle"></i>
+                <input type="text" id ="qtn" placeholder="Cantidad" />
+            </div>
+            </div>
     </div>
         
     <br>

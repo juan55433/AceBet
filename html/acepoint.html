@@ -49,7 +49,7 @@
         <div class="fontapuesta" style="text-align:center;">AcePoint(minijuego)</div>
         <div class="padre">
             <div style="margin-top:2%; margin-left:4%; text-align: center;" class="rectangle">
-                20.0
+                <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">20.0</p>
             </div>
             <div class="circle" id ="circulo20" onclick="reply_click(this.id);getPoint20();">
             </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="padre">
             <div style="margin-top:2%; margin-left:4%; text-align:center;"class="rectangle";>
-                7.2
+                <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">7.2</p>
             </div> 
             <div class="circle" id ="circulo721" onclick="reply_click(this.id);getPoint721();">
             </div>
@@ -79,7 +79,7 @@
         </div>
         <div class="padre">
             <div style="margin-top:2%; margin-left:4%; text-align:center;" class ="rectangle">
-                2.8
+                <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">2.8</p>
             </div>
             <div class="circle" id ="circulo280" onclick="reply_click(this.id);getPoint280();">
             </div>
@@ -94,7 +94,7 @@
         </div>
         <div class="padre">
             <div style="margin-top:2%; margin-left:4% ;text-align:center;" class ="rectangle">
-                1.9
+                <p id ="ap" onclick = "apuesta(this.id);" style="cursor:pointer;">1.9</p>
             </div>
             <div class="circle" id ="circulo191" onclick="reply_click(this.id); getPoint191();">
             </div>
@@ -107,6 +107,13 @@
             <div class="circle" id ="circulo195" onclick="reply_click(this.id); getPoint191();">
             </div>
         </div>
+        <br>
+        <div style="text-align:center;">
+            <div style ="display:inline-block;" class="user">
+                <i class="bx bxs-user-circle"></i>
+                <input type="text" id ="qtn" placeholder="Cantidad" />
+            </div>
+            </div>
         <div class = "buttonace">
             <a id="btn" onclick="alert('Ganó un total de ');">Retirarse</a>
         </div>
